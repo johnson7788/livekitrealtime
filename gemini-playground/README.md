@@ -1,6 +1,6 @@
-# LiveKit + OpenAI Realtime Playground
+# LiveKit + Gemini2 Realtime Playground
 
-This project is an interactive playground that demonstrates the capabilities of OpenAI's Realtime API, allowing users to experiment with the API directly in their browser. It's built on top of LiveKit Agents.
+This project is an interactive playground that demonstrates the capabilities of Google's Gemini2 API, allowing users to experiment with the API directly in their browser. It's built on top of LiveKit Agents.
 
 See it in action at [realtime-playground.livekit.io](https://realtime-playground.livekit.io)
 
