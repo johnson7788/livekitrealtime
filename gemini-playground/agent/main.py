@@ -117,8 +117,8 @@ def run_multimodal_agent(ctx: JobContext, participant: rtc.Participant):
 
     if not config.openai_api_key or config.openai_api_key == "EXAMPLE":
         # 使用环境变量中的KEY
-        print("使用预设的OpenAI API KEY")
-        config.openai_api_key = os.environ.get("OPENAI_API_KEY")
+        print("使用预设的GOOGLE_API_KEY KEY")
+        config.openai_api_key = os.environ.get("GOOGLE_API_KEY")
 
     model = google.beta.realtime.RealtimeModel(
         model="gemini-2.0-flash-exp",
