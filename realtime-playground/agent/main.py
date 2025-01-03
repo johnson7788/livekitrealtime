@@ -119,8 +119,9 @@ def run_multimodal_agent(ctx: JobContext, participant: rtc.Participant, http_ses
 
     logger.info(f"starting MultimodalAgent with config: {config.to_dict()}")
 
-    if not config.openai_api_key:
+    if not config.openai_api_key or config.openai_api_key == "EXAMPLE":
         # 使用环境变量中的KEY
+        print("使用预设的OpenAI API KEY")
         config.openai_api_key = os.environ.get("OPENAI_API_KEY")
 
     model = openai.realtime.RealtimeModel(

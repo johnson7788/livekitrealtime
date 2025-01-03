@@ -10,7 +10,7 @@ import { AuthDialog } from "./auth";
 export function ConnectButton() {
   const { connect, disconnect, shouldConnect } = useConnection();
   const [connecting, setConnecting] = useState<boolean>(false);
-  const { pgState } = usePlaygroundState();
+  const { pgState,dispatch } = usePlaygroundState();
   const [showAuthDialog, setShowAuthDialog] = useState(false);
   const [initiateConnectionFlag, setInitiateConnectionFlag] = useState(false);
 
@@ -19,7 +19,8 @@ export function ConnectButton() {
       await disconnect();
     } else {
       if (!pgState.openaiAPIKey) {
-        setShowAuthDialog(true);
+        dispatch({ type: "SET_API_KEY", payload: "EXAMPLE" });
+        // setShowAuthDialog(true); 不显示输入key的对话框
       } else {
         await initiateConnection();
       }
