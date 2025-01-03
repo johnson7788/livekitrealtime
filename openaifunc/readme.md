@@ -1,1 +1,1 @@
-函数调用
+使用OpenAI的 realtime API 进行函数调用
