@@ -342,4 +342,5 @@ def run_multimodal_agent(ctx: JobContext, participant: rtc.Participant, http_ses
 
 
 if __name__ == "__main__":
-    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, worker_type=WorkerType.ROOM))
+    # port=0 表示关闭检查状态的url
+    cli.run_app(WorkerOptions(entrypoint_fnc=entrypoint, worker_type=WorkerType.ROOM, port=0))
