@@ -26,6 +26,7 @@ load_dotenv()
 
 logger = logging.getLogger("my-worker")
 logger.setLevel(logging.INFO)
+logger.info(f"使用的LIVEKIT_API_KEY是: {os.environ['LIVEKIT_API_KEY']}, {os.environ['LIVEKIT_URL']}")
 
 class ProxySession(aiohttp.ClientSession):
     def __init__(self, proxy_url, *args, **kwargs):
