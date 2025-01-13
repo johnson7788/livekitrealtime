@@ -13,8 +13,7 @@ from livekit.agents import (
     llm,
 )
 from livekit.agents.pipeline import VoicePipelineAgent
-from livekit.plugins import openai, deepgram, silero
-from livekit.plugins import cartesia, deepgram, openai, silero
+from livekit.plugins import cartesia, deepgram, openai, silero,azure
 from openai import AsyncClient
 
 
@@ -70,9 +69,9 @@ async def entrypoint(ctx: JobContext):
     # https://docs.livekit.io/agents/plugins
     agent = VoicePipelineAgent(
         vad=ctx.proc.userdata["vad"],
-        stt=deepgram.STT(http_session=http_session),
-        llm=openai.LLM(model=os.environ["OPENAI_API_MODEL"],base_url=os.environ["OPENAI_API_BASE_URL"],api_key=os.environ["OPENAI_API_KEY"], client=openai_async_client),
-        tts=cartesia.TTS(http_session=http_session),
+        stt=azure.STT(),
+        llm=openai.LLM.with_azure(model="gpt-4o-mini"),
+        tts=azure.TTS(),
         chat_ctx=initial_ctx,
     )
 
