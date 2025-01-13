@@ -86,7 +86,7 @@ def parse_session_config(data: Dict[str, Any]) -> SessionConfig:
     config = SessionConfig(
         openai_api_key=data.get("openai_api_key", ""),
         instructions=data.get("instructions", ""),
-        voice=data.get("voice", "Charon"),
+        voice=data.get("voice", "Aoede"),
         temperature=float(data.get("temperature", 0.8)),
         max_output_tokens=data.get("max_output_tokens")
         if data.get("max_output_tokens") == "inf"
