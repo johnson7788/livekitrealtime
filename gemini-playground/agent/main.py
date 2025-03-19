@@ -138,6 +138,7 @@ def run_multimodal_agent(ctx: JobContext, participant: rtc.Participant):
     async def update_config(
         data: rtc.rpc.RpcInvocationData,
     ):
+        # 监听来自浏览器的RPC调用
         if data.caller_identity != participant.identity:
             return
 
@@ -230,6 +231,7 @@ def run_multimodal_agent(ctx: JobContext, participant: rtc.Participant):
         description: str | None,
         variant: Literal["default", "success", "warning", "destructive"],
     ):
+        # RPC调用前端的错误通知
         await ctx.room.local_participant.perform_rpc(
             destination_identity=participant.identity,
             method="pg.toast",
